@@ -1,0 +1,23 @@
+/* ESTILOS GLOBAIS */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* HEADER */
+
+.header__quiz {
+  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: violet;
+}
+
+.header__quiz h1 {
+  font-size: 52px;
+  color: #fff;
+}
+
+/* QUIZ MAIN */
+
