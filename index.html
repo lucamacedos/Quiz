@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <title>Quiz</title>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
+    <!-- HEADER -->
     <header class="header__quiz">
       <h1>Quiz</h1>
     </header>
 
+    <!-- USER SCORE -->
+    <div class="user__score">
+      <h1>Você acertou <span class="score">0</span>% das perguntas</h1>
+    </div>
+
+    <!-- MAIN QUIZ -->
     <main class="quiz__background">
       <div class="quiz__container">
         <h1>Você consegue acertar algumas perguntas sobre "Solo Leveling"?</h1>
-        <form>
+        <form id="form">
           <div class="quiz__question">
-            <label class="quiz__question__title">O que tem dentro das dungeons?</label>
+            <label class="quiz__question__title"
+              >1. O que tem dentro das dungeons?</label
+            >
             <div class="quiz__answer">
               <input type="radio" id="answer1" name="question1" value="A" />
               <label for="answer1">Monstros</label>
@@ -28,8 +46,70 @@
               <label for="answer2">Criaturas</label>
             </div>
           </div>
+
+          <div class="quiz__question">
+            <label class="quiz__question__title"
+              >2. A obra "Solo Leveling" é de qual país?</label
+            >
+            <div class="quiz__answer">
+              <input type="radio" id="answer3" name="question2" value="A" />
+              <label for="answer3">Japão</label>
+            </div>
+            <div class="quiz__answer">
+              <input type="radio" id="answer4" name="question2" value="B" />
+              <label for="answer4">Coreia do Sul</label>
+            </div>
+          </div>
+
+          <div class="quiz__question">
+            <label class="quiz__question__title"
+              >3. Quando a Obra foi criada?</label
+            >
+            <div class="quiz__answer">
+              <input type="radio" id="answer5" name="question3" value="A" />
+              <label for="answer5">2016</label>
+            </div>
+            <div class="quiz__answer">
+              <input type="radio" id="answer6" name="question3" value="B" />
+              <label for="answer6">2017</label>
+            </div>
+          </div>
+
+          <div class="quiz__question">
+            <label class="quiz__question__title"
+              >4. Qual é o rank mais alto de Solo Leveling?</label
+            >
+            <div class="quiz__answer">
+              <input type="radio" id="answer7" name="question4" value="A" />
+              <label for="answer7">Rank-S</label>
+            </div>
+            <div class="quiz__answer">
+              <input type="radio" id="answer8" name="question4" value="B" />
+              <label for="answer8">Rank-SS</label>
+            </div>
+          </div>
+
+          <div class="quiz__question">
+            <label class="quiz__question__title"
+              >5. Qual é o nome completo do protagonista?</label
+            >
+            <div class="quiz__answer">
+              <input type="radio" id="answer9" name="question5" value="A" />
+              <label for="answer9">Sung Ji-hoo</label>
+            </div>
+            <div class="quiz__answer">
+              <input type="radio" id="answer10" name="question5" value="B" />
+              <label for="answer10">Sung Jin-woo</label>
+            </div>
+          </div>
+
+          <div class="quiz__button">
+            <button class="button">Resultado</button>
+          </div>
         </form>
       </div>
     </main>
+
+    <script src="app.js"></script>
   </body>
 </html>
