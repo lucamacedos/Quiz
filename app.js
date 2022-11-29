@@ -1,11 +1,33 @@
 const form = document.querySelector("#form");
 const userScore = document.querySelector(".user__score");
+const correctAnswers = ["A", "B", "C", "A", "B"];
 
-const correctAnswers = ["A", "B", "A", "A", "B"];
+const addClassAndScrollUp = () => {
+  userScore.classList.add("visible");
+  scrollTo(0, 0);
+};
+
+// const
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   let counter = 0;
+  let value = 0;
+
+  const checkAnswers = (answers, index) => {
+    const checkAnswers = answers === userAnswers[index];
+    if (checkAnswers) {
+      counter += 20;
+    }
+  };
+
+  const increaseCounter = () => {
+    if (value === counter) {
+      clearInterval(scoreAnimation);
+    }
+    document.querySelector(".score").textContent = `${value}`;
+    value++;
+  };
 
   const userAnswers = [
     event.target.question1.value,
@@ -15,22 +37,7 @@ form.addEventListener("submit", (event) => {
     event.target.question5.value,
   ];
 
-  correctAnswers.forEach((answers, index) => {
-    if (answers === userAnswers[index]) {
-      counter = counter + 20;
-    }
-  });
-
-  userScore.classList.add("visible");
-  scrollTo(0, 0);
-
-  let value = 0;
-
-  const scoreAnimation = setInterval(() => {
-    if (value === counter) {
-      clearInterval(scoreAnimation);
-    }
-    document.querySelector(".score").textContent = `${value}`;
-    value++;
-  }, 10);
+  correctAnswers.forEach(checkAnswers);
+  addClassAndScrollUp();
+  const scoreAnimation = setInterval(increaseCounter, 10);
 });
